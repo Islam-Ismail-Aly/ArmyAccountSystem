@@ -1,0 +1,44 @@
+﻿@model IQueryable<ArmyAccountSystem.Models.Vw_Invoice_Info>
+@{
+    ViewBag.Title = "GetAllInvoiceData";
+}
+@*<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>*@
+
+<h2 class="text-dark">All Invoice Data</h2>
+
+<hr />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Invoice ID</th>
+            <th>Item Name</th>
+            <th>Item Count</th>
+            <th>Item Price</th>
+            <th>Customer Name</th>
+            <th>Invoice Date</th>
+            <th>Cashier Name</th>
+            <th>Branch Name</th>
+            <th>City Name</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.ItemName</td>
+                <td>@item.ItemCount</td>
+                <td>@item.ItemPrice</td>
+                <td>@item.CustomerName</td>
+                <td>@item.Invoicedate</td>
+                <td>@item.CashierName</td>
+                <td>@item.BranchName</td>
+                <td>@item.CityName</td>
+                <td>@item.TotalPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>

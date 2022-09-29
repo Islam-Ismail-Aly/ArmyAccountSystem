@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e95819dc5dac465b902d21edf7bc49b3" Name="Diagram1">
+        <EntityTypeShape EntityType="ArmyTechTaskModel.Branch" Width="1.5" PointX="2.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArmyTechTaskModel.Cashier" Width="1.5" PointX="4.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArmyTechTaskModel.City" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArmyTechTaskModel.InvoiceDetail" Width="1.5" PointX="8.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArmyTechTaskModel.InvoiceHeader" Width="1.5" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArmyTechTaskModel.Vw_Invoice_Info" Width="1.5" PointX="0.625" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="ArmyTechTaskModel.FK_Branches_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="ArmyTechTaskModel.FK_Cashier_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="ArmyTechTaskModel.FK_InvoiceHeader_Branches" ManuallyRouted="false" />
+        <AssociationConnector Association="ArmyTechTaskModel.FK_InvoiceHeader_Cashier" ManuallyRouted="false" />
+        <AssociationConnector Association="ArmyTechTaskModel.FK_InvoiceDetails_InvoiceHeader" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

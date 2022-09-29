@@ -1,0 +1,26 @@
+﻿@model ArmyAccountSystem.Models.Cashier
+@{
+    ViewBag.Title = "DeleteCashier";
+}
+<h2>Delete Cashier User</h2>
+<h4>Are you sure you want to delete this Invoice?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Cashier Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CashierName)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> &nbsp; &nbsp; &nbsp;
+            @Html.ActionLink("Cancel", "GetCashierData", "Cashier", new { }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+

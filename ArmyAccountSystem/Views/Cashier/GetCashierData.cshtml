@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ArmyAccountSystem.Models.Cashier>
+@{
+    ViewBag.Title = "GetCashierData";
+}
+
+<h2>Cashier Data</h2>
+
+<hr />
+
+<a href="@Url.Action("AddCashierData")" class="btn btn-outline-primary">Add New Cashier</a>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Cashier Name</th>
+            <th>Bransh Name</th>
+            <th>City Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CashierName</td>
+                <td>@item.Branch.BranchName</td>
+                <td>@item.Branch.City.CityName</td>
+                <td>
+                    @Html.ActionLink("Edit Cashier", "EditCashier", "Cashier", new { id = item.ID }, new { @class = "btn btn-primary" }) &nbsp; &nbsp; &nbsp;
+                    @Html.ActionLink("Delete Cashier", "DeleteCashier", "Cashier", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

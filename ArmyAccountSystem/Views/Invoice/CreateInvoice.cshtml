@@ -1,0 +1,50 @@
+﻿@model ArmyAccountSystem.Models.InvoiceDetail
+@{
+    ViewBag.Title = "CreateInvoice";
+}
+
+<h2>Add a new Invoice</h2>
+
+<hr>
+
+@using (Html.BeginForm("SaveInvoice", "Invoice"))
+{
+    <div class="form-group">
+        @Html.Label("Item Name")
+        @Html.TextBoxFor(x => x.ItemName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ItemName, null, new { @class = "text-danger" })
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Item Count")
+        @Html.TextBoxFor(x => x.ItemCount, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ItemCount, null, new { @class = "text-danger" })
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Item Price")
+        @Html.TextBoxFor(x => x.ItemPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ItemPrice, null, new { @class = "text-danger" })
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Customer ID")
+        <div class="form-group">
+            @*@Html.DropDownList("Customer Name", (IEnumerable<SelectListItem>)ViewData["CustomerName"], new { @class = "btn btn-defult dropdown-toggle" })*@
+            @Html.DropDownListFor(x => x.InvoiceHeaderID, ViewBag.CustomerID as SelectList, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.InvoiceHeaderID, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-success">Save</button>
+            @Html.ActionLink("Cancel", "Index", "Invoice", new { }, new { @class = "btn btn-default" })
+        </div>
+    </div>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+

@@ -1,0 +1,38 @@
+﻿@model ArmyAccountSystem.Models.Cashier
+@{
+    ViewBag.Title = "AddCashierData";
+}
+
+<h2>Add a new Cashier</h2>
+
+<hr>
+
+@using (Html.BeginForm("SaveCashierData", "Cashier"))
+{
+    <div class="form-group">
+        @Html.Label("Cashier Name")
+        @Html.TextBoxFor(x => x.CashierName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CashierName, null, new { @class = "text-danger" })
+    </div>
+    <br>
+    <div class="form-group">
+        @Html.Label("Branch Name")
+        <div class="form-group">
+            @*@Html.DropDownList("Customer Name", (IEnumerable<SelectListItem>)ViewData["CustomerName"], new { @class = "btn btn-defult dropdown-toggle" })*@
+            @Html.DropDownListFor(x => x.Branch.ID, ViewBag.BranchID as SelectList, "", new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Branch.ID, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-success">Save</button>
+            @Html.ActionLink("Cancel", "GetCashierData", "Cashier", new { }, new { @class = "btn btn-default" })
+        </div>
+    </div>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+
